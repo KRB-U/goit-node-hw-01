@@ -5,7 +5,7 @@ const contactsPath = require("./services").absolutePath("db", "contacts.json");
 
 const { nanoid } = require("nanoid");
 
-async function listContacts() {
+export async function listContacts() {
   const list = await fs.readFile(contactsPath);
   return JSON.parse(list);
 }
@@ -42,9 +42,9 @@ async function addContact(data) {
   return newContact;
 }
 
-module.exports = {
-  listContacts,
-  getContactById,
-  removeContact,
-  addContact,
-};
+// module.exports = {
+//   listContacts,
+//   getContactById,
+//   removeContact,
+//   addContact,
+// };
